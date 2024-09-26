@@ -1,0 +1,27 @@
+<div class="p-5 mb-4 bg-body-tertiary rounded-3">
+    <div class="container">
+        <div class="row">
+            <div class="row">
+                <div class="col-sm-6">
+                    <app-progresso [progresso]="progresso" />
+                </div>
+                <div class="col-sm-6 d-flex justify-content-end">
+                    <app-tentativa [tentativas]="tentativa"/>
+                </div>
+            </div>
+            <h5 class="fw-bold">Traduza a frase:</h5>
+            <p>{{ arrFrases[rodada].fraseEng }}</p>
+            <textarea         
+                row="3" 
+                class="form-control mb-3" 
+                (input)="atualizaReposta($event)"   
+                [value]="resposta"             
+                >
+                {{resposta}}
+            </textarea>
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-primary" (click)="validarResposta()">Verificar</button>
+            </div>
+        </div>
+    </div>
+</div>
